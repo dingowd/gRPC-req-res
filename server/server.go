@@ -2,10 +2,12 @@ package main
 
 import (
 	"context"
+	"fmt"
 	rqrs "github.com/dingowd/gRPC-req-res/req-res"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/grpclog"
 	"net"
+	"os"
 )
 
 type server struct {
@@ -16,6 +18,7 @@ func (s *server) Do(c context.Context, rq *rqrs.Request) (*rqrs.Response, error)
 	response := &rqrs.Response{
 		Message: rq.Message + " Hello from server",
 	}
+	fmt.Fprintln(os.Stdout, "Received: ", rq.String())
 	return response, nil
 }
 
