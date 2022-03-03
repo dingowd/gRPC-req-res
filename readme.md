@@ -2,6 +2,10 @@
 Creates 2 docker containers, bridge subnet inside docker and links containers.
 Client sending string request to gRPC server and getting response.
 
+Server container from scratch
+
+Client container from ubuntu:20.04
+
 GOOS=linux
 GOARCH=amd64
 CGO_ENABLED=0
