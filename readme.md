@@ -4,7 +4,7 @@ Client sending string request to gRPC server and getting response.
 
 Server container from scratch
 
-Client container from ubuntu:20.04
+Client container from scratch
 
 GOOS=linux
 GOARCH=amd64
