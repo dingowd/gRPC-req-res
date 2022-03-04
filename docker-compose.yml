@@ -1,0 +1,25 @@
+version: "3.8"
+
+services:
+  server:
+    image: grpc-small
+    container_name: grpc-server
+    networks:
+      grpcnetwork:
+        aliases:
+          - host
+
+  client:
+    image: grpc-client
+    stdin_open: true
+    tty: true
+    container_name: grpc-client
+    networks:
+      grpcnetwork:
+        aliases:
+          - client
+
+networks:
+  grpcnetwork:
+    ipam:
+      driver: default

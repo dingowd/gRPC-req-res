@@ -16,16 +16,8 @@ client/go build -a -installsuffix cgo -o client .
 
 server/docker build . --tag grpc-small
 
-docker run -it grpc-small
-
 client/docker build . --tag grpc-client
 
-docker run -it grpc-client
+docker-compose up -d
 
-docker network create --subnet 10.1.0.0/16 --gateway=10.1.0.1 --ip-range 10.1.4.0/24 --driver=bridge --label=dockerhost grpcbridge
-
-docker network connect --alias host grpcbridge (grpc-small)
-
-docker network connect grpcbridge (grpc-client)
-
-Run client inside grpc-client container
+docker attach grpc client
