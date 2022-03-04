@@ -20,4 +20,4 @@ client/docker build . --tag grpc-client
 
 docker-compose up -d
 
-docker attach grpc client
+docker attach grpc-client
